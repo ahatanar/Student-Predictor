@@ -90,7 +90,7 @@ def load_model(model_name, input_dim=None):
         raise ValueError(f"Model '{model_name}' not found!")
 
 # Predict Function
-def predict(model_name, user_input, training_columns):
+def predict_score(model_name, user_input):
     """Make predictions using the specified model."""
     training_columns = ['School', 'Gender', 'Age', 'HomeAddress', 'FamilySize', 'ParentStatus', 'MotherEducation', 'FatherEducation', 'MotherJob', 'FatherJob', 'SchoolReason', 'Guardian', 'TravelTime', 'StudyTime', 'PastFailures', 'SchoolSupport', 'FamilySupport', 'PaidClasses', 'ExtracurricularActivities', 'NurserySchool', 'HigherEducation', 'InternetAccess', 'RomanticRelationship', 'FamilyRelationship', 'FreeTime', 'GoingOutWithFriends', 'WorkdayAlcoholConsumption', 'WeekendAlcoholConsumption', 'HealthStatus', 'Absences']
 
