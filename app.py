@@ -23,6 +23,10 @@ def predict():
     
     # return jsonify({'prediction': round(prediction, 2)})
 
+@app.route('/metrics')
+def metrics():
+    return render_template('metrics.html')
+
 # @app.route('/metrics')
 # def metrics():
 #     """Display model metrics."""

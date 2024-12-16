@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance Form</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='headerstyle.css') }}">
 </head>
+
 <body>
+    <nav>
+        <a href="/">Student Form</a>
+        <a href="/metrics">Metrics Page</a>
+    </nav>
     <h1>Student Performance Form</h1>
     <form action="/submit" method="POST">
         <div class="form-group">

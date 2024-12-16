@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Predictions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='metricsstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='headerstyle.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a href="/">Student Form</a>
+        <a href="/metrics">Metrics Page</a>
+    </nav>
+
+    <h1>Model Predictions and Accuracy</h1>
+
+    <div class="container">
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='custom_nn_train_predictions.png') }}" alt="Custom NN Predictions">
+            <p>Custom NN - Training Set</p>
+            <p>Accuracy: <span id="custom_nn_accuracy">Loading...</span></p>
+        </div>
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='linear_regression_test_predictions.png') }}" alt="Linear Regression Predictions">
+            <p>Linear Regression - Test Set</p>
+            <p>Accuracy: <span id="linear_regression_accuracy">Loading...</span></p>
+        </div>
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='mlp_train_predictions.png') }}" alt="MLP Predictions">
+            <p>MLP - Training Set</p>
+            <p>Accuracy: <span id="mlp_accuracy">Loading...</span></p>
+        </div>
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='random_forest_test_predictions.png') }}" alt="Random Forest Predictions">
+            <p>Random Forest - Test Set</p>
+            <p>Accuracy: <span id="random_forest_accuracy">Loading...</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder: Load accuracy numbers dynamically from JSON
+        fetch("{{ url_for('static', filename='metrics.json') }}")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("custom_nn_accuracy").textContent = data.custom_nn_accuracy + "%";
+                document.getElementById("linear_regression_accuracy").textContent = data.linear_regression_accuracy + "%";
+                document.getElementById("mlp_accuracy").textContent = data.mlp_accuracy + "%";
+                document.getElementById("random_forest_accuracy").textContent = data.random_forest_accuracy + "%";
+            })
+            .catch(error => {
+                console.error("Error loading accuracy data:", error);
+            });
+    </script>
+</body>
+</html>
