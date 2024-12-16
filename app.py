@@ -27,7 +27,10 @@ def predict():
         prediction = predict_score(model_name, user_input)
 
         prediction  = str(round(prediction, 2))
-        return jsonify({'prediction': prediction})
+        response = jsonify({'prediction': prediction})
+        response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        return response
+    
     except Exception as e:
         # Handle errors
         return jsonify({'error': str(e)}), 400

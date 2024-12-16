@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
         <a href="/metrics">Metrics Page</a>
     </nav>
     <h1>Student Performance Form</h1>
-    <form action="/predict" method="POST">
+    <form id="studentForm" action="/predict" method="POST">
         <div class="form-group">
             <label for="school">School</label>
             <select id="school" name="School" required>
@@ -22,7 +23,7 @@
                 <option value="MS">Mousinho da Silveira</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label>Sex</label>
             <div class="radio-group">
@@ -32,7 +33,7 @@
                 <label for="female">Female</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="age">Age</label>
             <select id="age" name="Age" required>
@@ -46,7 +47,7 @@
                 <option value="22">22</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label>Address</label>
             <div class="radio-group">
@@ -56,7 +57,7 @@
                 <label for="rural">Rural</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="famsize">Family Size</label>
             <div class="radio-group">
@@ -66,7 +67,7 @@
                 <label for="gt3">Greater than 3</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="pstatus">Parental Status</label>
             <div class="radio-group">
@@ -76,7 +77,7 @@
                 <label for="apart">Apart</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="medu">Mother's Education</label>
             <select id="medu" name="MotherEducation" required>
@@ -87,7 +88,7 @@
                 <option value="4">Higher Education</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="fedu">Father's Education</label>
             <select id="fedu" name="FatherEducation" required>
@@ -98,7 +99,7 @@
                 <option value="4">Higher Education</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="mjob">Mother's Job</label>
             <select id="mjob" name="MotherJob" required>
@@ -109,7 +110,7 @@
                 <option value="other">Other</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="fjob">Father's Job</label>
             <select id="fjob" name="FatherJob" required>
@@ -120,7 +121,7 @@
                 <option value="other">Other</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="reason">Reason for School Choice</label>
             <select id="reason" name="SchoolReason" required>
@@ -130,7 +131,7 @@
                 <option value="other">Other</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="guardian">Guardian</label>
             <select id="guardian" name="Guardian" required>
@@ -139,7 +140,7 @@
                 <option value="other">Other</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="traveltime">Travel Time</label>
             <select id="traveltime" name="TravelTime" required>
@@ -149,7 +150,7 @@
                 <option value="4">>1 hour</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="studytime">Study Time</label>
             <select id="studytime" name="StudyTime" required>
@@ -159,7 +160,7 @@
                 <option value="4">More than 10 hours</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="failures">Past Failures</label>
             <select id="failures" name="PastFailures" required>
@@ -169,7 +170,7 @@
                 <option value="3">3 or more</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="schoolsup">Extra School Support</label>
             <div class="radio-group">
@@ -179,7 +180,7 @@
                 <label for="schoolsup_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="famsup">Family Educational Support</label>
             <div class="radio-group">
@@ -189,7 +190,7 @@
                 <label for="famsup_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="paid">Paid Classes</label>
             <div class="radio-group">
@@ -199,7 +200,7 @@
                 <label for="paid_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="activities">Extra-Curricular Activities</label>
             <div class="radio-group">
@@ -209,7 +210,7 @@
                 <label for="activities_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="nursery">Attended Nursery School</label>
             <div class="radio-group">
@@ -219,7 +220,7 @@
                 <label for="nursery_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="higher">Wants Higher Education</label>
             <div class="radio-group">
@@ -229,7 +230,7 @@
                 <label for="higher_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="internet">Internet Access</label>
             <div class="radio-group">
@@ -239,7 +240,7 @@
                 <label for="internet_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="romantic">In a Romantic Relationship</label>
             <div class="radio-group">
@@ -249,7 +250,7 @@
                 <label for="romantic_no">No</label>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="famrel">Family Relationships</label>
             <select id="famrel" name="FamilyRelationship" required>
@@ -260,7 +261,7 @@
                 <option value="5">Excellent</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="freetime">Free Time</label>
             <select id="freetime" name="FreeTime" required>
@@ -271,7 +272,7 @@
                 <option value="5">Very High</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="goout">Going Out</label>
             <select id="goout" name="GoingOutWithFriends" required>
@@ -282,7 +283,7 @@
                 <option value="5">Always</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="dalc">Weekday Alcohol Consumption</label>
             <select id="dalc" name="WorkdayAlcoholConsumption" required>
@@ -293,7 +294,7 @@
                 <option value="5">Very High</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="walc">Weekend Alcohol Consumption</label>
             <select id="walc" name="WeekendAlcoholConsumption" required>
@@ -304,7 +305,7 @@
                 <option value="5">Very High</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="health">Health</label>
             <select id="health" name="HealthStatus" required>
@@ -315,12 +316,12 @@
                 <option value="5">Very Good</option>
             </select>
         </div>
-
+        
         <div class="form-group">
             <label for="absences">Absences</label>
             <input type="number" id="absences" name="Absences" min="0" max="93" required>
         </div>
-
+        
         <div class="form-group">
             <label for="ml_model">Select ML Model</label>
             <select id="ml_model" name="ml_model" required>
@@ -331,12 +332,38 @@
                 <option value="random_forest">Random Forest</option>
             </select>
         </div>
-
-        <form action="/predict" method="POST">
-            <!-- Your input fields here -->
-            <button type="submit">Submit</button>
-        </form>
-        
+        <button type="submit">Submit</button>
     </form>
+
+    <!-- Container for displaying the returned JSON -->
+    <h2>Response</h2>
+    <pre id="responseContainer">Submit the form to see the response here.</pre>
+
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent page reload
+            
+            const formData = new FormData(this); // Gather form data
+            const responseContainer = document.getElementById('responseContainer');
+            
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Error in response');
+                }
+
+                const data = await response.json();
+                // Display the JSON response in the response container
+                responseContainer.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                console.error('Submission error:', error);
+                responseContainer.textContent = 'An error occurred!';
+            }
+        });
+    </script>
 </body>
 </html>
