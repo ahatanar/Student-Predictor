@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, jsonify
+from services import predict_score
+
 # from models import load_models
 # from services import preprocess_input, predict_grade, get_model_metrics
 
@@ -14,14 +16,21 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     """Handle predictions."""
-    # Parse user input
-    user_input = request.form.to_dict()
-    print(user_input)
-    # Preprocess and predict
-    # processed_input = preprocess_input(user_input)
-    # prediction = predict_grade(models['mlp_model'], processed_input)
-    
-    # return jsonify({'prediction': round(prediction, 2)})
+    try:
+        # Parse user input
+        user_input = request.form.to_dict()
+
+        # Extract model name and remove it from user input
+        model_name = user_input.pop('ml_model')
+
+        
+        prediction = predict_score(model_name, user_input)
+
+        prediction  = str(round(prediction, 2))
+        return jsonify({'prediction': prediction})
+    except Exception as e:
+        # Handle errors
+        return jsonify({'error': str(e)}), 400
 
 @app.route('/metrics')
 def metrics():
