@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='metricsstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='headerstyle.css') }}">
+    <style>
+        .info-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-table th, .info-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .info-table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .info-table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Student Form</a>
+        <a href="/metrics">Metrics Page</a>
+        <a href="/info">Dataset Info</a>
+    </nav>
+
+    <h1>Dataset Variables and Descriptions</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th>Variable Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>school</td>
+                <td>Student's school (binary: 'GP' - Gabriel Pereira or 'MS' - Mousinho da Silveira)</td>
+            </tr>
+            <tr>
+                <td>sex</td>
+                <td>Student's gender (binary: 'F' - Female or 'M' - Male)</td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td>Student's age (numeric: from 15 to 22)</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>Student's home address type (binary: 'U' - Urban or 'R' - Rural)</td>
+            </tr>
+            <tr>
+                <td>famsize</td>
+                <td>Family size (binary: 'LE3' - Less or equal to 3, 'GT3' - Greater than 3)</td>
+            </tr>
+            <tr>
+                <td>pstatus</td>
+                <td>Parent's cohabitation status (binary: 'T' - Together or 'A' - Apart)</td>
+            </tr>
+            <tr>
+                <td>medu</td>
+                <td>Mother's education (numeric: 0 = None, 1 = Primary, 2 = 5th-9th grade, 3 = Secondary, 4 = Higher)</td>
+            </tr>
+            <tr>
+                <td>fedu</td>
+                <td>Father's education (numeric: 0 = None, 1 = Primary, 2 = 5th-9th grade, 3 = Secondary, 4 = Higher)</td>
+            </tr>
+            <tr>
+                <td>mjob</td>
+                <td>Mother's job (nominal: 'teacher', 'health', 'services', 'at_home', or 'other')</td>
+            </tr>
+            <tr>
+                <td>fjob</td>
+                <td>Father's job (nominal: 'teacher', 'health', 'services', 'at_home', or 'other')</td>
+            </tr>
+            <tr>
+                <td>reason</td>
+                <td>Reason for choosing the school (nominal: 'home', 'reputation', 'course', 'other')</td>
+            </tr>
+            <tr>
+                <td>guardian</td>
+                <td>Student's guardian (nominal: 'mother', 'father', 'other')</td>
+            </tr>
+            <tr>
+                <td>traveltime</td>
+                <td>Travel time to school (numeric: 1 = <15 min, 2 = 15-30 min, 3 = 30-60 min, 4 = >1 hour)</td>
+            </tr>
+            <tr>
+                <td>studytime</td>
+                <td>Weekly study time (numeric: 1 = <2 hours, 2 = 2-5 hours, 3 = 5-10 hours, 4 = >10 hours)</td>
+            </tr>
+            <tr>
+                <td>failures</td>
+                <td>Number of past class failures (numeric: n if 1<=n<3, else 4)</td>
+            </tr>
+            <tr>
+                <td>schoolsup</td>
+                <td>Extra educational support (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>famsup</td>
+                <td>Family educational support (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>paid</td>
+                <td>Extra paid classes (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>activities</td>
+                <td>Extra-curricular activities (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>nursery</td>
+                <td>Attended nursery school (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>higher</td>
+                <td>Wants to take higher education (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>internet</td>
+                <td>Internet access at home (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>romantic</td>
+                <td>In a romantic relationship (binary: 'yes' or 'no')</td>
+            </tr>
+            <tr>
+                <td>famrel</td>
+                <td>Quality of family relationships (numeric: 1 = very bad to 5 = excellent)</td>
+            </tr>
+            <tr>
+                <td>freetime</td>
+                <td>Free time after school (numeric: 1 = very low to 5 = very high)</td>
+            </tr>
+            <tr>
+                <td>goout</td>
+                <td>Going out with friends (numeric: 1 = very low to 5 = very high)</td>
+            </tr>
+            <tr>
+                <td>dalc</td>
+                <td>Workday alcohol consumption (numeric: 1 = very low to 5 = very high)</td>
+            </tr>
+            <tr>
+                <td>walc</td>
+                <td>Weekend alcohol consumption (numeric: 1 = very low to 5 = very high)</td>
+            </tr>
+            <tr>
+                <td>health</td>
+                <td>Current health status (numeric: 1 = very bad to 5 = very good)</td>
+            </tr>
+            <tr>
+                <td>absences</td>
+                <td>Number of school absences (numeric: from 0 to 93)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

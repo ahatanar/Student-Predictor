@@ -39,6 +39,10 @@ def predict():
 def metrics():
     return render_template('metrics.html')
 
+@app.route('/info')
+def info():
+    return render_template('info.html')
+
 # @app.route('/metrics')
 # def metrics():
 #     """Display model metrics."""
