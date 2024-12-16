@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Student Performance Form</h1>
     <form action="/submit" method="POST">
         <div class="form-group">
             <label for="school">School</label>
-            <select id="school" name="school">
+            <select id="school" name="school" required>
                 <option value="GP">Gabriel Pereira</option>
                 <option value="MS">Mousinho da Silveira</option>
             </select>
@@ -20,16 +20,16 @@
         <div class="form-group">
             <label>Sex</label>
             <div class="radio-group">
-                <input type="radio" id="male" name="sex" value="M">
+                <input type="radio" id="male" name="sex" value="M" required>
                 <label for="male">Male</label>
-                <input type="radio" id="female" name="sex" value="F">
+                <input type="radio" id="female" name="sex" value="F" required>
                 <label for="female">Female</label>
             </div>
         </div>
 
         <div class="form-group">
             <label for="age">Age</label>
-            <select id="age" name="age">
+            <select id="age" name="age" required>
                 <option value="15">15</option>
                 <option value="16">16</option>
                 <option value="17">17</option>
@@ -44,9 +44,9 @@
         <div class="form-group">
             <label>Address</label>
             <div class="radio-group">
-                <input type="radio" id="urban" name="address" value="U">
+                <input type="radio" id="urban" name="address" value="U" required>
                 <label for="urban">Urban</label>
-                <input type="radio" id="rural" name="address" value="R">
+                <input type="radio" id="rural" name="address" value="R" required>
                 <label for="rural">Rural</label>
             </div>
         </div>
@@ -54,9 +54,9 @@
         <div class="form-group">
             <label for="famsize">Family Size</label>
             <div class="radio-group">
-                <input type="radio" id="le3" name="famsize" value="LE3">
+                <input type="radio" id="le3" name="famsize" value="LE3" required>
                 <label for="le3">Less or equal to 3</label>
-                <input type="radio" id="gt3" name="famsize" value="GT3">
+                <input type="radio" id="gt3" name="famsize" value="GT3" required>
                 <label for="gt3">Greater than 3</label>
             </div>
         </div>
@@ -64,16 +64,16 @@
         <div class="form-group">
             <label for="pstatus">Parental Status</label>
             <div class="radio-group">
-                <input type="radio" id="together" name="pstatus" value="T">
+                <input type="radio" id="together" name="pstatus" value="T" required>
                 <label for="together">Together</label>
-                <input type="radio" id="apart" name="pstatus" value="A">
+                <input type="radio" id="apart" name="pstatus" value="A" required>
                 <label for="apart">Apart</label>
             </div>
         </div>
 
         <div class="form-group">
             <label for="medu">Mother's Education</label>
-            <select id="medu" name="medu">
+            <select id="medu" name="medu" required>
                 <option value="0">None</option>
                 <option value="1">Primary Education</option>
                 <option value="2">5th to 9th Grade</option>
@@ -84,7 +84,7 @@
 
         <div class="form-group">
             <label for="fedu">Father's Education</label>
-            <select id="fedu" name="fedu">
+            <select id="fedu" name="fedu" required>
                 <option value="0">None</option>
                 <option value="1">Primary Education</option>
                 <option value="2">5th to 9th Grade</option>
@@ -95,7 +95,7 @@
 
         <div class="form-group">
             <label for="mjob">Mother's Job</label>
-            <select id="mjob" name="mjob">
+            <select id="mjob" name="mjob" required>
                 <option value="teacher">Teacher</option>
                 <option value="health">Health</option>
                 <option value="services">Services</option>
@@ -106,7 +106,7 @@
 
         <div class="form-group">
             <label for="fjob">Father's Job</label>
-            <select id="fjob" name="fjob">
+            <select id="fjob" name="fjob" required>
                 <option value="teacher">Teacher</option>
                 <option value="health">Health</option>
                 <option value="services">Services</option>
@@ -117,7 +117,7 @@
 
         <div class="form-group">
             <label for="reason">Reason for School Choice</label>
-            <select id="reason" name="reason">
+            <select id="reason" name="reason" required>
                 <option value="home">Close to Home</option>
                 <option value="reputation">School Reputation</option>
                 <option value="course">Course Preference</option>
@@ -127,7 +127,7 @@
 
         <div class="form-group">
             <label for="guardian">Guardian</label>
-            <select id="guardian" name="guardian">
+            <select id="guardian" name="guardian" required>
                 <option value="mother">Mother</option>
                 <option value="father">Father</option>
                 <option value="other">Other</option>
@@ -136,17 +136,17 @@
 
         <div class="form-group">
             <label for="traveltime">Travel Time</label>
-            <select id="traveltime" name="traveltime">
-                <option value="1"><15 min</option>
-                <option value="2">15–30 min</option>
-                <option value="3">30 min–1 hour</option>
+            <select id="traveltime" name="traveltime" required>
+                <option value="1">Less than 15 min</option>
+                <option value="2">15-30 min</option>
+                <option value="3">30 min-1 hour</option>
                 <option value="4">>1 hour</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="studytime">Study Time</label>
-            <select id="studytime" name="studytime">
+            <select id="studytime" name="studytime" required>
                 <option value="1">Less than 2 hours</option>
                 <option value="2">2 to 5 hours</option>
                 <option value="3">5 to 10 hours</option>
@@ -156,7 +156,7 @@
 
         <div class="form-group">
             <label for="failures">Past Failures</label>
-            <select id="failures" name="failures">
+            <select id="failures" name="failures" required>
                 <option value="0">None</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -167,19 +167,19 @@
         <div class="form-group">
             <label for="schoolsup">Extra School Support</label>
             <div class="radio-group">
-                <input type="radio" id="schoolsup_yes" name="schoolsup" value="yes">
+                <input type="radio" id="schoolsup_yes" name="schoolsup" value="yes" required>
                 <label for="schoolsup_yes">Yes</label>
-                <input type="radio" id="schoolsup_no" name="schoolsup" value="no">
+                <input type="radio" id="schoolsup_no" name="schoolsup" value="no" required>
                 <label for="schoolsup_no">No</label>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="famsup">Family Support</label>
+            <label for="famsup">Family Educational Support</label>
             <div class="radio-group">
-                <input type="radio" id="famsup_yes" name="famsup" value="yes">
+                <input type="radio" id="famsup_yes" name="famsup" value="yes" required>
                 <label for="famsup_yes">Yes</label>
-                <input type="radio" id="famsup_no" name="famsup" value="no">
+                <input type="radio" id="famsup_no" name="famsup" value="no" required>
                 <label for="famsup_no">No</label>
             </div>
         </div>
@@ -187,9 +187,9 @@
         <div class="form-group">
             <label for="paid">Paid Classes</label>
             <div class="radio-group">
-                <input type="radio" id="paid_yes" name="paid" value="yes">
+                <input type="radio" id="paid_yes" name="paid" value="yes" required>
                 <label for="paid_yes">Yes</label>
-                <input type="radio" id="paid_no" name="paid" value="no">
+                <input type="radio" id="paid_no" name="paid" value="no" required>
                 <label for="paid_no">No</label>
             </div>
         </div>
@@ -197,9 +197,9 @@
         <div class="form-group">
             <label for="activities">Extra-Curricular Activities</label>
             <div class="radio-group">
-                <input type="radio" id="activities_yes" name="activities" value="yes">
+                <input type="radio" id="activities_yes" name="activities" value="yes" required>
                 <label for="activities_yes">Yes</label>
-                <input type="radio" id="activities_no" name="activities" value="no">
+                <input type="radio" id="activities_no" name="activities" value="no" required>
                 <label for="activities_no">No</label>
             </div>
         </div>
@@ -207,9 +207,9 @@
         <div class="form-group">
             <label for="nursery">Attended Nursery School</label>
             <div class="radio-group">
-                <input type="radio" id="nursery_yes" name="nursery" value="yes">
+                <input type="radio" id="nursery_yes" name="nursery" value="yes" required>
                 <label for="nursery_yes">Yes</label>
-                <input type="radio" id="nursery_no" name="nursery" value="no">
+                <input type="radio" id="nursery_no" name="nursery" value="no" required>
                 <label for="nursery_no">No</label>
             </div>
         </div>
@@ -217,9 +217,9 @@
         <div class="form-group">
             <label for="higher">Wants Higher Education</label>
             <div class="radio-group">
-                <input type="radio" id="higher_yes" name="higher" value="yes">
+                <input type="radio" id="higher_yes" name="higher" value="yes" required>
                 <label for="higher_yes">Yes</label>
-                <input type="radio" id="higher_no" name="higher" value="no">
+                <input type="radio" id="higher_no" name="higher" value="no" required>
                 <label for="higher_no">No</label>
             </div>
         </div>
@@ -227,9 +227,9 @@
         <div class="form-group">
             <label for="internet">Internet Access</label>
             <div class="radio-group">
-                <input type="radio" id="internet_yes" name="internet" value="yes">
+                <input type="radio" id="internet_yes" name="internet" value="yes" required>
                 <label for="internet_yes">Yes</label>
-                <input type="radio" id="internet_no" name="internet" value="no">
+                <input type="radio" id="internet_no" name="internet" value="no" required>
                 <label for="internet_no">No</label>
             </div>
         </div>
@@ -237,16 +237,16 @@
         <div class="form-group">
             <label for="romantic">In a Romantic Relationship</label>
             <div class="radio-group">
-                <input type="radio" id="romantic_yes" name="romantic" value="yes">
+                <input type="radio" id="romantic_yes" name="romantic" value="yes" required>
                 <label for="romantic_yes">Yes</label>
-                <input type="radio" id="romantic_no" name="romantic" value="no">
+                <input type="radio" id="romantic_no" name="romantic" value="no" required>
                 <label for="romantic_no">No</label>
             </div>
         </div>
 
         <div class="form-group">
             <label for="famrel">Family Relationships</label>
-            <select id="famrel" name="famrel">
+            <select id="famrel" name="famrel" required>
                 <option value="1">Very Bad</option>
                 <option value="2">Bad</option>
                 <option value="3">Neutral</option>
@@ -257,7 +257,7 @@
 
         <div class="form-group">
             <label for="freetime">Free Time</label>
-            <select id="freetime" name="freetime">
+            <select id="freetime" name="freetime" required>
                 <option value="1">Very Low</option>
                 <option value="2">Low</option>
                 <option value="3">Neutral</option>
@@ -268,7 +268,7 @@
 
         <div class="form-group">
             <label for="goout">Going Out</label>
-            <select id="goout" name="goout">
+            <select id="goout" name="goout" required>
                 <option value="1">Rarely</option>
                 <option value="2">Sometimes</option>
                 <option value="3">Often</option>
@@ -279,7 +279,7 @@
 
         <div class="form-group">
             <label for="dalc">Weekday Alcohol Consumption</label>
-            <select id="dalc" name="dalc">
+            <select id="dalc" name="dalc" required>
                 <option value="1">Very Low</option>
                 <option value="2">Low</option>
                 <option value="3">Moderate</option>
@@ -290,7 +290,7 @@
 
         <div class="form-group">
             <label for="walc">Weekend Alcohol Consumption</label>
-            <select id="walc" name="walc">
+            <select id="walc" name="walc" required>
                 <option value="1">Very Low</option>
                 <option value="2">Low</option>
                 <option value="3">Moderate</option>
@@ -301,7 +301,7 @@
 
         <div class="form-group">
             <label for="health">Health</label>
-            <select id="health" name="health">
+            <select id="health" name="health" required>
                 <option value="1">Very Bad</option>
                 <option value="2">Bad</option>
                 <option value="3">Neutral</option>
@@ -312,10 +312,14 @@
 
         <div class="form-group">
             <label for="absences">Absences</label>
-            <input type="number" id="absences" name="absences" min="0" max="93">
+            <input type="number" id="absences" name="absences" min="0" max="93" required>
         </div>
 
-        <button type="submit">Submit</button>
+        <form action="/predict" method="POST">
+            <!-- Your input fields here -->
+            <button type="submit">Submit</button>
+        </form>
+        
     </form>
 </body>
 </html>
