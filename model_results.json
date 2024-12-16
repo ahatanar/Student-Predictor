@@ -1,0 +1,22 @@
+{
+    "Custom NN": {
+        "R\u00b2 Score": 0.88,
+        "MAE": 1.24,
+        "Accuracy": "48.10%"
+    },
+    "MLP": {
+        "R\u00b2 Score": 1.0,
+        "MAE": 0.06,
+        "Accuracy": "100.00%"
+    },
+    "Random Forest": {
+        "R\u00b2 Score": 0.33,
+        "MAE": 2.99,
+        "Accuracy": "17.72%"
+    },
+    "Linear Regression": {
+        "R\u00b2 Score": 0.1,
+        "MAE": 3.49,
+        "Accuracy": "17.72%"
+    }
+}
