@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='headerstyle.css') }}">
 </head>
 <body>
-
     <nav>
         <a href="/">Student Form</a>
         <a href="/metrics">Metrics Page</a>
@@ -17,40 +16,70 @@
     <h1>Model Predictions and Accuracy</h1>
 
     <div class="container">
+        <!-- Custom NN -->
         <div class="image-card">
             <img src="{{ url_for('static', filename='custom_nn_train_predictions.png') }}" alt="Custom NN Predictions">
             <p>Custom NN - Training Set</p>
+            <p>R² Score: <span id="custom_nn_r2">Loading...</span></p>
+            <p>MAE: <span id="custom_nn_mae">Loading...</span></p>
             <p>Accuracy: <span id="custom_nn_accuracy">Loading...</span></p>
         </div>
+
+        <!-- Linear Regression -->
         <div class="image-card">
             <img src="{{ url_for('static', filename='linear_regression_test_predictions.png') }}" alt="Linear Regression Predictions">
             <p>Linear Regression - Test Set</p>
+            <p>R² Score: <span id="linear_regression_r2">Loading...</span></p>
+            <p>MAE: <span id="linear_regression_mae">Loading...</span></p>
             <p>Accuracy: <span id="linear_regression_accuracy">Loading...</span></p>
         </div>
+
+        <!-- MLP -->
         <div class="image-card">
             <img src="{{ url_for('static', filename='mlp_train_predictions.png') }}" alt="MLP Predictions">
             <p>MLP - Training Set</p>
+            <p>R² Score: <span id="mlp_r2">Loading...</span></p>
+            <p>MAE: <span id="mlp_mae">Loading...</span></p>
             <p>Accuracy: <span id="mlp_accuracy">Loading...</span></p>
         </div>
+
+        <!-- Random Forest -->
         <div class="image-card">
             <img src="{{ url_for('static', filename='random_forest_test_predictions.png') }}" alt="Random Forest Predictions">
             <p>Random Forest - Test Set</p>
+            <p>R² Score: <span id="random_forest_r2">Loading...</span></p>
+            <p>MAE: <span id="random_forest_mae">Loading...</span></p>
             <p>Accuracy: <span id="random_forest_accuracy">Loading...</span></p>
         </div>
     </div>
 
     <script>
-        // Placeholder: Load accuracy numbers dynamically from JSON
-        fetch("{{ url_for('static', filename='metrics.json') }}")
+        // Load metrics dynamically from JSON
+        fetch("{{ url_for('static', filename='model_results.json') }}")
             .then(response => response.json())
             .then(data => {
-                document.getElementById("custom_nn_accuracy").textContent = data.custom_nn_accuracy + "%";
-                document.getElementById("linear_regression_accuracy").textContent = data.linear_regression_accuracy + "%";
-                document.getElementById("mlp_accuracy").textContent = data.mlp_accuracy + "%";
-                document.getElementById("random_forest_accuracy").textContent = data.random_forest_accuracy + "%";
+                // Populate Custom NN Metrics
+                document.getElementById("custom_nn_r2").textContent = data["Custom NN"]["R² Score"];
+                document.getElementById("custom_nn_mae").textContent = data["Custom NN"]["MAE"];
+                document.getElementById("custom_nn_accuracy").textContent = data["Custom NN"]["Accuracy"];
+
+                // Populate Linear Regression Metrics
+                document.getElementById("linear_regression_r2").textContent = data["Linear Regression"]["R² Score"];
+                document.getElementById("linear_regression_mae").textContent = data["Linear Regression"]["MAE"];
+                document.getElementById("linear_regression_accuracy").textContent = data["Linear Regression"]["Accuracy"];
+
+                // Populate MLP Metrics
+                document.getElementById("mlp_r2").textContent = data["MLP"]["R² Score"];
+                document.getElementById("mlp_mae").textContent = data["MLP"]["MAE"];
+                document.getElementById("mlp_accuracy").textContent = data["MLP"]["Accuracy"];
+
+                // Populate Random Forest Metrics
+                document.getElementById("random_forest_r2").textContent = data["Random Forest"]["R² Score"];
+                document.getElementById("random_forest_mae").textContent = data["Random Forest"]["MAE"];
+                document.getElementById("random_forest_accuracy").textContent = data["Random Forest"]["Accuracy"];
             })
             .catch(error => {
-                console.error("Error loading accuracy data:", error);
+                console.error("Error loading metrics:", error);
             });
     </script>
 </body>

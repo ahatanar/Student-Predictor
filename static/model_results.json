@@ -7,7 +7,7 @@
     "MLP": {
         "R\u00b2 Score": 1.0,
         "MAE": 0.06,
-        "Accuracy": "100.00%"
+        "Accuracy": "98.03%"
     },
     "Random Forest": {
         "R\u00b2 Score": 0.33,
