@@ -1,12 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 from services import predict_score
 
-# from models import load_models
-# from services import preprocess_input, predict_grade, get_model_metrics
 
 app = Flask(__name__)
 
-# models = load_models()
 
 @app.route('/')
 def home():
@@ -17,10 +14,8 @@ def home():
 def predict():
     """Handle predictions."""
     try:
-        # Parse user input
         user_input = request.form.to_dict()
 
-        # Extract model name and remove it from user input
         model_name = user_input.pop('ml_model')
 
         
@@ -32,7 +27,6 @@ def predict():
         return response
     
     except Exception as e:
-        # Handle errors
         return jsonify({'error': str(e)}), 400
 
 @app.route('/metrics')
